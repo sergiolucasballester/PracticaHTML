@@ -13,7 +13,7 @@ class JsonResponse
      * @param mixed $data
      * @return string
      */
-    public static function send(bool $success, string $message, $data = null): string
+    public static function send($success, $message, $data = null)
     {
         return json_encode([
             'success' => $success,

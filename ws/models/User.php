@@ -7,14 +7,14 @@ require_once __DIR__ . '/../interfaces/IToJson.php';
  */
 class User implements IToJson
 {
-    private ?int $id;
-    private string $nombre;
-    private string $apellidos;
-    private string $password;
-    private ?string $telefono;
-    private ?string $email;
-    private ?string $sexo;
-    private ?string $fechaNacimiento;
+    private $id;
+    private $nombre;
+    private $apellidos;
+    private $password;
+    private $telefono;
+    private $email;
+    private $sexo;
+    private $fechaNacimiento;
 
     /**
      * Constructor de User
@@ -29,14 +29,14 @@ class User implements IToJson
      * @param int|null $id
      */
     public function __construct(
-        string $nombre,
-        string $apellidos,
-        string $password,
-        ?string $telefono = null,
-        ?string $email = null,
-        ?string $sexo = null,
-        ?string $fechaNacimiento = null,
-        ?int $id = null
+        $nombre,
+        $apellidos,
+        $password,
+        $telefono = null,
+        $email = null,
+        $sexo = null,
+        $fechaNacimiento = null,
+        $id = null
     ) {
         $this->nombre = $nombre;
         $this->apellidos = $apellidos;
@@ -48,82 +48,82 @@ class User implements IToJson
         $this->id = $id;
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
-    public function setId(?int $id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
 
-    public function getNombre(): string
+    public function getNombre()
     {
         return $this->nombre;
     }
 
-    public function setNombre(string $nombre): void
+    public function setNombre($nombre)
     {
         $this->nombre = $nombre;
     }
 
-    public function getApellidos(): string
+    public function getApellidos()
     {
         return $this->apellidos;
     }
 
-    public function setApellidos(string $apellidos): void
+    public function setApellidos($apellidos)
     {
         $this->apellidos = $apellidos;
     }
 
-    public function getPassword(): string
+    public function getPassword()
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): void
+    public function setPassword($password)
     {
         $this->password = $password;
     }
 
-    public function getTelefono(): ?string
+    public function getTelefono()
     {
         return $this->telefono;
     }
 
-    public function setTelefono(?string $telefono): void
+    public function setTelefono($telefono)
     {
         $this->telefono = $telefono;
     }
 
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->email;
     }
 
-    public function setEmail(?string $email): void
+    public function setEmail($email)
     {
         $this->email = $email;
     }
 
-    public function getSexo(): ?string
+    public function getSexo()
     {
         return $this->sexo;
     }
 
-    public function setSexo(?string $sexo): void
+    public function setSexo($sexo)
     {
         $this->sexo = $sexo;
     }
 
-    public function getFechaNacimiento(): ?string
+    public function getFechaNacimiento()
     {
         return $this->fechaNacimiento;
     }
 
-    public function setFechaNacimiento(?string $fechaNacimiento): void
+    public function setFechaNacimiento($fechaNacimiento)
     {
         $this->fechaNacimiento = $fechaNacimiento;
     }
@@ -133,7 +133,7 @@ class User implements IToJson
      *
      * @return string
      */
-    public function toJSON(): string
+    public function toJSON()
     {
         return json_encode([
             'id' => $this->id,

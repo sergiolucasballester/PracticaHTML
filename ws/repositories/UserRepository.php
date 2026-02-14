@@ -1,14 +1,14 @@
 <?php
 
 require_once __DIR__ . '/../config/DatabaseConnection.php';
-require_once __DIR__ . '/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 /**
  * Clase UserRepository para gestionar operaciones con usuarios en la BD
  */
 class UserRepository
 {
-    private PDO $connection;
+    private $connection;
 
     public function __construct()
     {
@@ -21,7 +21,7 @@ class UserRepository
      * @param int $id
      * @return User|null
      */
-    public function getUserById(int $id): ?User
+    public function getUserById($id)
     {
         $sql = 'SELECT * FROM alumno WHERE id = :id';
         $stmt = $this->connection->prepare($sql);
@@ -39,7 +39,7 @@ class UserRepository
      *
      * @return array
      */
-    public function getAllUsers(): array
+    public function getAllUsers()
     {
         $sql = 'SELECT * FROM alumno';
         $stmt = $this->connection->prepare($sql);
@@ -59,7 +59,7 @@ class UserRepository
      * @param User $user
      * @return User|null
      */
-    public function createUser(User $user): ?User
+    public function createUser($user)
     {
         $sql = 'INSERT INTO alumno (nombre, apellidos, password, telefono, email, sexo, fecha_nacimiento) 
                 VALUES (:nombre, :apellidos, :password, :telefono, :email, :sexo, :fecha_nacimiento)';
@@ -89,7 +89,7 @@ class UserRepository
      * @param User $user
      * @return bool
      */
-    public function updateUser(int $id, User $user): bool
+    public function updateUser($id, $user)
     {
         // Obtener usuario actual para preservar campos no modificados
         $current = $this->getUserById($id);
@@ -131,7 +131,7 @@ class UserRepository
      * @param int $id
      * @return User|null
      */
-    public function deleteUser(int $id): ?User
+    public function deleteUser($id)
     {
         // Obtener el usuario antes de eliminarlo
         $user = $this->getUserById($id);
@@ -152,7 +152,7 @@ class UserRepository
      * @param array $data
      * @return User
      */
-    private function createUserFromData(array $data): User
+    private function createUserFromData($data)
     {
         return new User(
             $data['nombre'],

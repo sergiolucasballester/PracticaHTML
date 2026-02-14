@@ -5,11 +5,11 @@
  */
 class DatabaseConnection
 {
-    private static ?PDO $connection = null;
-    private const HOST = 'localhost';
-    private const DATABASE = 'colegio';
-    private const USER = 'root';
-    private const PASSWORD = '';
+    private static $connection = null;
+    private $host = 'localhost';
+    private $database = 'colegio';
+    private $user = 'root';
+    private $password = '';
 
     /**
      * Obtiene la conexión PDO (patrón Singleton)
@@ -17,19 +17,19 @@ class DatabaseConnection
      * @return PDO
      * @throws Exception
      */
-    public static function getConnection(): PDO
+    public static function getConnection()
     {
         if (self::$connection === null) {
             try {
-                $dsn = 'mysql:host=' . self::HOST . ';dbname=' . self::DATABASE . ';charset=utf8mb4';
+                $dsn = 'mysql:host=localhost;dbname=colegio;charset=utf8mb4';
                 self::$connection = new PDO(
                     $dsn,
-                    self::USER,
-                    self::PASSWORD,
-                    [
+                    'root',
+                    '',
+                    array(
                         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                    ]
+                    )
                 );
             } catch (PDOException $e) {
                 throw new Exception('Error de conexión a la base de datos: ' . $e->getMessage());

@@ -1,44 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/nav.js"></script>
     <script src="js/script.js" defer></script>
     <title>Tabla</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Práctica 1 - Repaso de etiquetas HTML</h1>
-        <h2>Multimedia</h2>
+      <h1>Práctica 1 - Repaso de etiquetas HTML</h1>
+      <h2>Multimedia</h2>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="form.html">Formulario</a></li>
-            <li><a href="table.html">Tabla</a></li>
-            <li><a href="multimedia.html">Multimedia</a></li>
-            <li><a href="extra.html">Otras etiquetas</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <input type="text" id="filter" placeholder="Filtrar por nombre o apellido...">
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Sexo</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-
-            </tbody>
-        </table>
+      <input
+        type="text"
+        id="filter"
+        placeholder="Filtrar por nombre o apellido..."
+      />
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Sexo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
     </main>
-</body>
+
+    <div id="editModal">
+      <div class="modal-content">
+        <h2>Editar Usuario</h2>
+        <label for="editName">Nombre:</label>
+        <input type="text" id="editName" placeholder="Nombre" />
+
+        <label for="editSurname">Apellidos:</label>
+        <input type="text" id="editSurname" placeholder="Apellidos" />
+
+        <label for="editPhone">Teléfono:</label>
+        <input type="tel" id="editPhone" placeholder="Teléfono" />
+
+        <label for="editEmail">Email:</label>
+        <input type="email" id="editEmail" placeholder="Email" />
+
+        <label for="editSex">Sexo:</label>
+        <select id="editSex">
+          <option value="Masculino">Masculino</option>
+          <option value="Femenino">Femenino</option>
+        </select>
+
+        <div class="modal-buttons">
+          <button type="button" class="cancel" onclick="closeEditForm()">
+            Cancelar
+          </button>
+          <button type="button" class="save" onclick="saveUserChanges()">
+            Guardar
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

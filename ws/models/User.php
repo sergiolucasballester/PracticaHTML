@@ -1,81 +1,149 @@
 <?php
 
-require_once __DIR__ . '/../interfaces/IToJson.php'; 
+require_once __DIR__ . '/../interfaces/IToJson.php';
 
-class User implements IToJson{
-    private $name;
-    private $surname;
-    private $password;
-    private $phone;
-    private $email;
-    private $sex;
-    
-    public function __construct($name, $surname, $password, $phone, $email, $sex)
-    {
-        $this->name = $name;
-        $this->surname = $surname;
+/**
+ * Clase User que representa un alumno de la base de datos
+ */
+class User implements IToJson
+{
+    private ?int $id;
+    private string $nombre;
+    private string $apellidos;
+    private string $password;
+    private ?string $telefono;
+    private ?string $email;
+    private ?string $sexo;
+    private ?string $fechaNacimiento;
+
+    /**
+     * Constructor de User
+     *
+     * @param string $nombre
+     * @param string $apellidos
+     * @param string $password
+     * @param string|null $telefono
+     * @param string|null $email
+     * @param string|null $sexo
+     * @param string|null $fechaNacimiento
+     * @param int|null $id
+     */
+    public function __construct(
+        string $nombre,
+        string $apellidos,
+        string $password,
+        ?string $telefono = null,
+        ?string $email = null,
+        ?string $sexo = null,
+        ?string $fechaNacimiento = null,
+        ?int $id = null
+    ) {
+        $this->nombre = $nombre;
+        $this->apellidos = $apellidos;
         $this->password = $password;
-        $this->phone = $phone;
+        $this->telefono = $telefono;
         $this->email = $email;
-        $this->sex = $sex;
+        $this->sexo = $sexo;
+        $this->fechaNacimiento = $fechaNacimiento;
+        $this->id = $id;
     }
 
-    public function getName(){
-		return $this->name;
-	}
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
-	public function setName($name){
-		$this->name = $name;
-	}
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
 
-	public function getSurname(){
-		return $this->surname;
-	}
+    public function getNombre(): string
+    {
+        return $this->nombre;
+    }
 
-	public function setSurname($surname){
-		$this->surname = $surname;
-	}
+    public function setNombre(string $nombre): void
+    {
+        $this->nombre = $nombre;
+    }
 
-	public function getPassword(){
-		return $this->password;
-	}
+    public function getApellidos(): string
+    {
+        return $this->apellidos;
+    }
 
-	public function setPassword($password){
-		$this->password = $password;
-	}
+    public function setApellidos(string $apellidos): void
+    {
+        $this->apellidos = $apellidos;
+    }
 
-	public function getPhone(){
-		return $this->phone;
-	}
+    public function getPassword(): string
+    {
+        return $this->password;
+    }
 
-	public function setPhone($phone){
-		$this->phone = $phone;
-	}
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
 
-	public function getEmail(){
-		return $this->email;
-	}
+    public function getTelefono(): ?string
+    {
+        return $this->telefono;
+    }
 
-	public function setEmail($email){
-		$this->email = $email;
-	}
+    public function setTelefono(?string $telefono): void
+    {
+        $this->telefono = $telefono;
+    }
 
-	public function getSex(){
-		return $this->sex;
-	}
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
 
-	public function setSex($sex){
-		$this->sex = $sex;
-	}
+    public function setEmail(?string $email): void
+    {
+        $this->email = $email;
+    }
 
-    public function toJSON() {
+    public function getSexo(): ?string
+    {
+        return $this->sexo;
+    }
+
+    public function setSexo(?string $sexo): void
+    {
+        $this->sexo = $sexo;
+    }
+
+    public function getFechaNacimiento(): ?string
+    {
+        return $this->fechaNacimiento;
+    }
+
+    public function setFechaNacimiento(?string $fechaNacimiento): void
+    {
+        $this->fechaNacimiento = $fechaNacimiento;
+    }
+
+    /**
+     * Convierte el objeto User a formato JSON
+     *
+     * @return string
+     */
+    public function toJSON(): string
+    {
         return json_encode([
-            'name' => $this->getName(),
-            'surname' => $this->getSurname(),
-            'password' => $this->getPassword(),
-            'phone' => $this->getPhone(),
-            'email' => $this->getEmail(),
-            'sex' => $this->getSex(),
+            'id' => $this->id,
+            'nombre' => $this->nombre,
+            'apellidos' => $this->apellidos,
+            'password' => $this->password,
+            'telefono' => $this->telefono,
+            'email' => $this->email,
+            'sexo' => $this->sexo,
+            'fecha_nacimiento' => $this->fechaNacimiento,
         ]);
     }
 }

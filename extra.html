@@ -1,64 +1,77 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/darkMode.js"></script>
     <script src="js/nav.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Otras etiquetas</title>
   </head>
-  <body>
-    <header>
-      <h1>Práctica 1 - Repaso de etiquetas HTML</h1>
-      <h2>Multimedia</h2>
+  <body class="bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-slate-900 text-white py-8 md:py-12 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Otras Etiquetas HTML</h1>
+        <p class="text-blue-100 text-lg">Ejemplos de etiquetas y elementos HTML</p>
+      </div>
     </header>
 
-    <main>
-      <section>
-        <h3>Lista ordenada</h3>
-        <ol>
-          <li>Primer elemento</li>
-          <li>Segundo elemento</li>
-          <li>Tercer elemento</li>
-        </ol>
-      </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <div class="space-y-8">
+        <section class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Lista Ordenada</h3>
+          <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Primer elemento</li>
+            <li>Segundo elemento</li>
+            <li>Tercer elemento</li>
+          </ol>
+        </section>
 
-      <section>
-        <h3>Algunos párrafos</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
-          blanditiis vel illo quaerat a porro velit rerum aut nostrum laboriosam
-          ut consequatur vitae sit, nulla repellat. Architecto, iusto deserunt.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
-          consequatur esse sunt ullam, nemo ipsa nisi magnam fugit laboriosam
-          laborum adipisci perferendis facere quos sapiente velit commodi alias
-          tenetur nobis!
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
-          nostrum. Possimus, laboriosam omnis laudantium voluptatibus aspernatur
-          reiciendis adipisci non dolorem fugit quia architecto! Delectus iste,
-          repellendus eos deleniti asperiores vero!
-        </p>
-      </section>
+        <section class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Algunos Párrafos</h3>
+          <div class="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil
+              blanditiis vel illo quaerat a porro velit rerum aut nostrum laboriosam
+              ut consequatur vitae sit, nulla repellat. Architecto, iusto deserunt.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
+              consequatur esse sunt ullam, nemo ipsa nisi magnam fugit laboriosam
+              laborum adipisci perferendis facere quos sapiente velit commodi alias
+              tenetur nobis!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam,
+              nostrum. Possimus, laboriosam omnis laudantium voluptatibus aspernatur
+              reiciendis adipisci non dolorem fugit quia architecto! Delectus iste,
+              repellendus eos deleniti asperiores vero!
+            </p>
+          </div>
+        </section>
 
-      <section>
-        <h3>Código preformateado</h3>
-        <pre>
-                System.out.println("Código Java");
-            </pre
-        >
-      </section>
+        <section class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Código Preformateado</h3>
+          <pre class="bg-gray-900 dark:bg-gray-950 text-gray-100 p-4 rounded overflow-x-auto">
+            <code>System.out.println("Código Java");</code>
+          </pre>
+        </section>
 
-      <section>
-        <h3>Énfasis y resaltado</h3>
-        <p>
-          Esto es un texto de ejemplo usar la etiqueta <mark>"mark"</mark> y
-          <strong>"strong"</strong>
-        </p>
-      </section>
+        <section class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+          <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Énfasis y Resaltado</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Esto es un texto de ejemplo usar la etiqueta 
+            <mark class="bg-yellow-200 dark:bg-yellow-700 px-1 rounded">"mark"</mark> y
+            <strong class="font-bold">"strong"</strong>
+          </p>
+        </section>
+      </div>
     </main>
+
+    <footer class="bg-gray-100 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-700 mt-12 py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2026 Gestión de Alumnos</p>
+      </div>
+    </footer>
   </body>
 </html>

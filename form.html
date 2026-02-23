@@ -1,81 +1,129 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/darkMode.js"></script>
     <script src="js/nav.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script src="js/script.js" defer></script>
-    <title>Formulario</title>
+    <title>Formulario - Nuevo Alumno</title>
   </head>
-  <body>
-    <header>
-      <h1>Práctica 1 - Repaso de etiquetas HTML</h1>
-      <h2>Multimedia</h2>
+  <body class="bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-slate-900 text-white py-8 md:py-12 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Crear Nuevo Alumno</h1>
+        <p class="text-blue-100 text-lg">Completa el formulario para registrar un nuevo usuario</p>
+      </div>
     </header>
 
-    <main>
-      <form id="createForm">
-        <label for="nombre">Nombre:</label>
-        <input
-          type="text"
-          name="nombre"
-          id="nombre"
-          placeholder="Introduce tu nombre aquí..."
-          required
-        />
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 md:p-8">
+        <form id="createForm" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="nombre" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nombre: <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                placeholder="Introduce tu nombre aquí..."
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
 
-        <label for="apellidos">Apellidos:</label>
-        <input
-          type="text"
-          name="apellidos"
-          id="apellidos"
-          placeholder="Introduce tus apellidos aquí..."
-          required
-        />
+            <div>
+              <label for="apellidos" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Apellidos: <span class="text-red-500">*</span></label>
+              <input
+                type="text"
+                name="apellidos"
+                id="apellidos"
+                placeholder="Introduce tus apellidos aquí..."
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
 
-        <label for="password">Contraseña:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Introduce tu contraseña aquí..."
-          required
-        />
+            <div>
+              <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Contraseña: <span class="text-red-500">*</span></label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Introduce tu contraseña aquí..."
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
 
-        <label for="telefono">Número de teléfono:</label>
-        <input
-          type="tel"
-          name="telefono"
-          id="telefono"
-          placeholder="Introduce tu número de teléfono aquí..."
-        />
+            <div>
+              <label for="telefono" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Número de teléfono:</label>
+              <input
+                type="tel"
+                name="telefono"
+                id="telefono"
+                placeholder="Introduce tu número de teléfono aquí..."
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
 
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Introduce tu email aquí..."
-        />
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Introduce tu email aquí..."
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
 
-        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-        <input
-          type="date"
-          name="fecha_nacimiento"
-          id="fecha_nacimiento"
-          required
-        />
+            <div>
+              <label for="fecha_nacimiento" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Fecha de nacimiento: <span class="text-red-500">*</span></label>
+              <input
+                type="date"
+                name="fecha_nacimiento"
+                id="fecha_nacimiento"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 transition-colors"
+              />
+            </div>
+          </div>
 
-        <span>Sexo:</span>
-        <label for="sexo_m">Masculino</label>
-        <input type="radio" name="sexo" id="sexo_m" value="M" />
-        <label for="sexo_f">Femenino</label>
-        <input type="radio" name="sexo" id="sexo_f" value="F" />
+          <div class="bg-gray-50 dark:bg-slate-700 p-6 rounded-lg">
+            <legend class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Sexo:</legend>
+            <div class="flex items-center space-x-6">
+              <div class="flex items-center">
+                <input type="radio" name="sexo" id="sexo_m" value="M" class="w-4 h-4 text-blue-600 cursor-pointer" />
+                <label for="sexo_m" class="ml-2 cursor-pointer text-gray-700 dark:text-gray-300">Masculino</label>
+              </div>
+              <div class="flex items-center">
+                <input type="radio" name="sexo" id="sexo_f" value="F" class="w-4 h-4 text-blue-600 cursor-pointer" />
+                <label for="sexo_f" class="ml-2 cursor-pointer text-gray-700 dark:text-gray-300">Femenino</label>
+              </div>
+            </div>
+          </div>
 
-        <input type="submit" value="Enviar" />
-      </form>
+          <p class="text-sm text-gray-500 dark:text-gray-400"><span class="text-red-500">*</span> Campos obligatorios</p>
+
+          <div class="flex gap-4 justify-end">
+            <button type="reset" class="px-6 py-2 bg-gray-300 dark:bg-slate-600 text-gray-900 dark:text-white rounded-lg hover:bg-gray-400 dark:hover:bg-slate-500 transition-colors font-medium">
+              Limpiar
+            </button>
+            <button type="submit" class="px-6 py-2 bg-green-600 dark:bg-green-700 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors font-medium">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
+
+    <footer class="bg-gray-100 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-700 mt-12 py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2026 Gestión de Alumnos</p>
+      </div>
+    </footer>
   </body>
 </html>

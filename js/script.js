@@ -34,10 +34,12 @@ function createRowForUser(user) {
 
   const btnEdit = document.createElement("button");
   btnEdit.textContent = "Editar";
+  btnEdit.className = "btn-edit";
   btnEdit.addEventListener("click", () => openEditForm(user));
 
   const btnDelete = document.createElement("button");
   btnDelete.textContent = "Eliminar";
+  btnDelete.className = "btn-delete";
   btnDelete.addEventListener("click", () => confirmDeleteUser(user));
 
   tdActions.appendChild(btnEdit);

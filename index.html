@@ -1,16 +1,86 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/darkMode.js"></script>
     <script src="js/nav.js"></script>
-    <title>Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Inicio - Gestión de Alumnos</title>
   </head>
-  <body>
-    <header>
-      <h1>Práctica 1 - Repaso de etiquetas HTML</h1>
-      <h2>Multimedia</h2>
+  <body class="bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 transition-colors">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-slate-900 text-white py-8 md:py-12 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">Gestión de Alumnos</h1>
+        <p class="text-blue-100 text-lg">Administración sencilla de usuarios</p>
+      </div>
     </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">📋</div>
+          <h3 class="text-xl font-semibold mb-2">Tabla de Alumnos</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Visualiza, edita y elimina alumnos de manera sencilla.</p>
+          <a href="table.html" class="inline-block bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+            Ver Tabla
+          </a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">➕</div>
+          <h3 class="text-xl font-semibold mb-2">Añadir Alumno</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Crea nuevos usuarios completando un formulario simple.</p>
+          <a href="form.html" class="inline-block bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+            Ir al Formulario
+          </a>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">⚙️</div>
+          <h3 class="text-xl font-semibold mb-2">Funcionalidades</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Edita, filtra y elimina usuarios con facilidad.</p>
+          <a href="table.html" class="inline-block bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+            Explorar
+          </a>
+        </div>
+      </section>
+
+      <section class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-8">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">Características</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Crear nuevos alumnos</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Editar información de usuarios</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Eliminar usuarios</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Filtrar por nombre o apellido</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Modo claro y oscuro</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 dark:text-green-400 mr-3 text-xl">✓</span>
+            <span class="text-gray-700 dark:text-gray-300">Diseño completamente responsive</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-700 mt-12 py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2026 Gestión de Alumnos - Práctica de Interfaces con Tailwind</p>
+      </div>
+    </footer>
   </body>
 </html>

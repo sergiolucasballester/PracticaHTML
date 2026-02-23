@@ -1,9 +1,21 @@
-<nav>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="form.html">Formulario</a></li>
-    <li><a href="table.html">Tabla</a></li>
-    <li><a href="multimedia.html">Multimedia</a></li>
-    <li><a href="extra.html">Otras etiquetas</a></li>
-  </ul>
+<nav class="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-gray-700 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <ul class="flex items-center justify-between h-16 space-x-1">
+      <div class="flex space-x-1">
+        <li><a href="index.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Inicio</a></li>
+        <li><a href="form.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Formulario</a></li>
+        <li><a href="table.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Tabla</a></li>
+        <li><a href="multimedia.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Multimedia</a></li>
+        <li><a href="extra.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Otras etiquetas</a></li>
+      </div>
+      <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors cursor-pointer" title="Alternar modo oscuro">
+        <svg id="sunIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1m-16 0H1m15.364 1.636l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        </svg>
+        <svg id="moonIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+      </button>
+    </ul>
+  </div>
 </nav>

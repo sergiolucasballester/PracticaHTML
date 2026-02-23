@@ -8,7 +8,7 @@
         <li><a href="multimedia.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Multimedia</a></li>
         <li><a href="extra.html" class="px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md transition-colors nav-link">Otras etiquetas</a></li>
       </div>
-      <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors" title="Alternar modo oscuro" onclick="toggleDarkMode()">
+      <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors cursor-pointer" title="Alternar modo oscuro">
         <svg id="sunIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display: none;">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1m-16 0H1m15.364 1.636l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
         </svg>
@@ -19,43 +19,3 @@
     </ul>
   </div>
 </nav>
-
-<script>
-  // Actualizar icono del dark mode button según el modo actual
-  function updateDarkModeIcon() {
-    const html = document.documentElement;
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    if (sunIcon && moonIcon) {
-      if (html.classList.contains('dark')) {
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-      } else {
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      }
-    }
-  }
-
-  // Actualizar icono inmediatamente
-  updateDarkModeIcon();
-
-  // Observar cambios en la clase 'dark' del html
-  const observer = new MutationObserver(() => {
-    updateDarkModeIcon();
-  });
-
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class']
-  });
-
-  // Wrapper para toggleDarkMode que actualice el icono
-  const originalToggle = window.toggleDarkMode;
-  window.toggleDarkMode = function () {
-    if (originalToggle) {
-      originalToggle();
-    }
-    setTimeout(updateDarkModeIcon, 10);
-  };
-</script>
